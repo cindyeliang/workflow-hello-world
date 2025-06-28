@@ -1,3 +1,10 @@
+# snakemake files
+.snakemake/
+
+# large data files
+data/
+mapped_reads/
+sorted_reads/
 
 # pixi environments
 .pixi
