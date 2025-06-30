@@ -1,5 +1,7 @@
 # test snakefile for snakemake tutotial
 
+configfile: "config.yaml"
+
 # define All rule at the top for snakemake to default to if not given a target
 rule all:
     input:
