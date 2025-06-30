@@ -7,4 +7,4 @@ samples:
     C: data/samples/C.fastq
 
 # specify prior mutation rate for variant calling
-prior_mut_rate: 1e-3
+prior_mut_rate: 0.001

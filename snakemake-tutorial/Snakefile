@@ -70,10 +70,10 @@ rule bcftools_call:
         config["prior_mut_rate"]
     log:
         # print rule-specific logfile
-        expand("logs/bcftools_call/{sample}.log", sample=config["samples"])
+        "logs/bcftools_call/all.log"
     shell:
         "(bcftools mpileup -f {input.fa} {input.bam} | "
-        "bcftools call -mv -P '{params}' > {output}) 2> {log}"
+        "bcftools call -mv -P {params} - > {output}) 2> {log}"
 
 # fifth rule: run custom script to create plots
 rule plot_quals:
