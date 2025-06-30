@@ -4,7 +4,7 @@
 samples:
     A: data/samples/A.fastq
     B: data/samples/B.fastq
-    C: ata/samples/C.fastq
+    C: data/samples/C.fastq
 
 # specify prior mutation rate for variant calling
 prior_mut_rate: 1e-3

@@ -1,5 +1,7 @@
 # snakemake files
 .snakemake/
+logs/
+benchmarks/
 
 # large data files
 data/
