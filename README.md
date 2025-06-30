@@ -1,5 +1,7 @@
 # Workflow manager hello world tests
 
+This repo consists of code and dataused to complete the [Snakemake General Use](https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html) tutorial
+
 ## Directory structure
 
 ```
@@ -71,4 +73,14 @@ pixi shell
 Test that environment is activated my invoking the snakemake help message:
 ```
 snakemake --help
+```
+
+Create DAG of all jobs
+```
+snakemake --dag | dot -Tsvg > alljobs_dag.svg
+```
+
+Run all jobs in Snakefile
+```
+snakemake -p --cores 1
 ```
