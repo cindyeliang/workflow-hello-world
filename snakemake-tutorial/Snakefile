@@ -1,5 +1,6 @@
 # test snakefile for snakemake tutotial
 
+# define config file used to specify inputs
 configfile: "config.yaml"
 
 # define All rule at the top for snakemake to default to if not given a target
@@ -7,8 +8,9 @@ rule all:
     input:
         "plots/quals.svg"
 
-# Define samples in a list for susbequent expand statement
-SAMPLES = ["A", "B", "C"]
+# input function for obtaining input for mapping
+def get_bwa_map_input_fastqs(wildcards):
+    return config["samples"][wildcards.sample]
 
 # first rule
 # sample and input wildcards are used
@@ -16,7 +18,7 @@ SAMPLES = ["A", "B", "C"]
 rule bwa_map:
     input:
         "data/genome.fa",
-        "data/samples/{sample}.fastq"
+        get_bwa_map_input_fastqs
     output:
         "mapped_reads/{sample}.bam"
     threads: 8
@@ -46,8 +48,8 @@ rule samtools_index:
 rule bcftools_call:
     input:
         fa="data/genome.fa",
-        bam=expand("sorted_reads/{sample}.bam", sample=SAMPLES),
-        bai=expand("sorted_reads/{sample}.bam.bai", sample=SAMPLES)
+        bam=expand("sorted_reads/{sample}.bam", sample=config["samples"]),
+        bai=expand("sorted_reads/{sample}.bam.bai", sample=config["samples"])
     output:
         "calls/all.vcf"
     shell:

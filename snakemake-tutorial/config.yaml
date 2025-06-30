@@ -1,0 +1,7 @@
+# snakemake tutorial config file
+
+# specify samples
+samples:
+    A: data/samples/A.fastq
+    B: data/samples/B.fastq
+    C: ata/samples/C.fastq
