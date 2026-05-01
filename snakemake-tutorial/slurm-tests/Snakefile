@@ -1,3 +1,6 @@
+# usage examples
+# snakemake --executor slurm --default-resources --jobs 1
+
 SAMPLES = ["A", "B", "C"]
 
 rule all:
