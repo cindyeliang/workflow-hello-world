@@ -1,6 +1,8 @@
 # usage examples
 # snakemake --executor slurm --default-resources --jobs 1
 
+configfile: "config.yaml"
+
 SAMPLES = ["A", "B", "C"]
 
 rule all:
