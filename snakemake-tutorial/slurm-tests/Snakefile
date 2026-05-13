@@ -1,5 +1,5 @@
 # usage examples
-# snakemake --executor slurm --default-resources --jobs 1
+# snakemake --executor slurm --profile slurm --jobs 1
 
 configfile: "config.yaml"
 
