@@ -1,10 +1,10 @@
 executor: slurm
 
 default-resources:
-  slurm_account: "standard"
-  slurm_partition: "short" # set to the partition they tell you us use
-  mem_mb: 512
-  runtime: 5        # minutes
+  - slurm_account=standard
+  - slurm_partition=short # set to the partition they tell you us use
+  - mem_mb=512
+  - runtime=5        # minutes
 
 default-storage-provider: fs
 local-storage-prefix: /data/tmp # path to fast storage that jobs have access to (I think this is correct)
